@@ -17,18 +17,23 @@ pipeline {
                 bat 'mvn clean package -DskipTests'
             }
         }
-        stage('Docker Build & Push') {
-            steps {
-                script {
-                    // This block handles the login, build, and push automatically
-                    docker.withRegistry('', "${REGISTRY_ID}") {
-                        def myImage = docker.build("${DOCKER_USER}/${IMAGE_NAME}:${env.BUILD_NUMBER}")
-                        myImage.push()
-                        myImage.push('latest')
+        stage('Push Docker Image') {
+                    steps {
+                        withCredentials([string(
+                            credentialsId: 'jenkinspwd',
+                            variable: 'DOCKER_PASS'
+                        )]) {
+                            bat '''
+                                :: Force use of default context to avoid "desktop-linux" errors
+                                docker context use default
+
+                                echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                                docker push %IMAGE_NAME%:%IMAGE_TAG%
+                                docker logout
+                            '''
+                        }
                     }
                 }
-            }
-        }
         stage('Kubernetes Deploy') {
             steps {
                 // This command tells Minikube to pull the brand new image version
