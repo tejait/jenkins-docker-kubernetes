@@ -7,7 +7,7 @@ pipeline {
         // THIS MUST MATCH: The "ID" you created in Jenkins Credentials
         REGISTRY_ID = 'DockerCredentialsfinal'
 
-        IMAGE_NAME = 'docker-kubernetes'
+        IMAGE_NAME = 'git-jenkinsdocker-kubernetes'
         DOCKER_CONTEXT = 'default'
     }
     stages {
