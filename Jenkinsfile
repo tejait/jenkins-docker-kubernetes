@@ -20,7 +20,7 @@ pipeline {
         stage('Push Docker Image') {
                     steps {
                         withCredentials([string(
-                            credentialsId: 'jenkinspwd',
+                            credentialsId: 'YourJavaStop@123',
                             variable: 'DOCKER_PASS'
                         )]) {
                             bat '''
