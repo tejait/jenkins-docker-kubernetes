@@ -8,6 +8,7 @@ pipeline {
         REGISTRY_ID = 'DockerCredentialsfinal'
 
         IMAGE_NAME = 'docker-kubernetes'
+        DOCKER_CONTEXT = 'default'
     }
     stages {
         stage('Maven Build') {
