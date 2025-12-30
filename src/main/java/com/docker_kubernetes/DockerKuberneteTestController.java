@@ -18,6 +18,6 @@ public class DockerKuberneteTestController {
     }
     @GetMapping("jenins-docker-kubernetes-test")
     public String jenkinsDockerKubernetesTest(){
-        return "Springboot - Git hub - Jenkins-  Docker Image pushed to docker-hub and deployed into Kubernetes  Success..";
+        return "Springboot - Git hub - Jenkins-  Docker Image pushed to docker-hub and deployed into Kubernetes  Success....";
     }
  }
