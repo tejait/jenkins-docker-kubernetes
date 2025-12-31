@@ -32,4 +32,8 @@ public class DockerKuberneteTestController {
 public String greet() {
     return "Greetings from Docker Kubernetes Application!";
 }
+@GetMapping("welcome")
+public String welcome() {
+    return "Welcome to the Docker Kubernetes Application!";
+}
  }
