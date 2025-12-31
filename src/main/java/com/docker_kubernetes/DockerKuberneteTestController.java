@@ -23,11 +23,12 @@ public class DockerKuberneteTestController {
         return "Springboot - Git hub - Jenkins-  Docker Image pushed to docker-hub and deployed into Kubernetes  Success....!!! ";
     }
 
-    @GetMapping("/hello")
+    @GetMapping("hello")
     public String hello(){
-     //changes done.
         return "Hello World!";
     }
-
-
+@GetMapping("greet")
+public String greet() {
+    return "Greetings from Docker Kubernetes Application!";
+}
  }
