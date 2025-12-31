@@ -12,16 +12,22 @@ public class DockerKuberneteTestController {
     public String test(){
         return "Docker Kubernetes Test Successful";
     }
+
     @GetMapping("kubernetestest")
     public String DockerKubernetesTest(){
         return "Docker Image pushed to docker-hub and deployed into Kubernetes Test Successful";
     }
+
     @GetMapping("jenkins-docker-kubernetes-test")
     public String jenkinsDockerKubernetesTest(){
         return "Springboot - Git hub - Jenkins-  Docker Image pushed to docker-hub and deployed into Kubernetes  Success....!!! ";
     }
+
     @GetMapping("/hello")
     public String hello(){
+     //changes done.
         return "Hello World!";
     }
+
+
  }
