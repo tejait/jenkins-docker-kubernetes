@@ -36,4 +36,9 @@ public String greet() {
 public String welcome() {
     return "Welcome to the Docker Kubernetes Application!";
 }
+
+    @GetMapping("sayHi")
+    public String sayHi() {
+        return "sayHi to the Docker Kubernetes Application!";
+    }
  }
